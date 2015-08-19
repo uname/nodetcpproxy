@@ -5,7 +5,7 @@ var HEX_MODE    = true;
 
 var LOCAL_ADDR  = "0.0.0.0";
 var LOCAL_PORT  = 8080;
-var REMOTE_ADDR = "192.168.45.132";
+var REMOTE_ADDR = "192.168.45.133";
 var REMOTE_PORT = 22;
  
 var server = net.createServer();
