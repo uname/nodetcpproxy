@@ -74,7 +74,20 @@ server.on("connection",
                 client1.destroy();
                 counter = 0;
             });
+            
+            client1.on("error", function() {
+                console.log("client1 error");
+                client1.destroy();
+                client2.destroy();
+                counter = 0;
+            });
 
+            client2.on("error", function() {
+                console.log("client2 error");
+                client2.destroy();
+                client1.destroy();
+                counter = 0;
+            });
         }
         
         counter++;
