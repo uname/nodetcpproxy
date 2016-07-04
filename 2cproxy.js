@@ -4,9 +4,9 @@ var LOG_DATA    = true;
 var HEX_MODE    = true;
 
 var SERVER1_ADDR  = "127.0.0.1";
-var SERVER1_PORT  = 8082; //4444;
-var SERVER2_ADDR  = "127.0.0.1"; //"115.159.157.126";
-var SERVER2_PORT  = 8081; //22;
+var SERVER1_PORT  = 4444;
+var SERVER2_ADDR  = "115.159.157.126";
+var SERVER2_PORT  = 8087;
 
 data2print = function(data)
 {
@@ -47,12 +47,12 @@ client2.connect(SERVER2_PORT, SERVER2_ADDR, function() {
     });
     
 client1.on("data", function(data) {
-        logData("client1 -> client2 :\n" + data2print(data));
+        logData("client1 -> client2 :" + data2print(data));
         client2.write(data);
     });
     
 client2.on("data", function(data) {
-        logData("client2 -> client1 :\n" + data2print(data));
+        logData("client2 -> client1 :" + data2print(data));
         client1.write(data);
     });
     
